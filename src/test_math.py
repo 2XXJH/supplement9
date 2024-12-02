@@ -24,7 +24,16 @@ def integrate_linear(m, b, a, c):
     return result
 
 def solve_system_of_equations(coefficients, constants):
-    
+    """
+    Solves a system of two linear equations.
+
+    Parameters:
+        coefficients (list[list[float]]): Coefficients of the equations as a 2x2 list.
+        constants (list[float]): Constants on the right-hand side as a list of two elements.
+
+    Returns:
+        dict: A dictionary with keys 'X' and 'Y' representing the solution.
+    """
     solution = solve(coefficients, constants)
     return {'X': solution[0], 'Y': solution[1]}
 
