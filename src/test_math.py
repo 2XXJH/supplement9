@@ -38,7 +38,17 @@ def solve_system_of_equations(coefficients, constants):
     return {'X': solution[0], 'Y': solution[1]}
 
 def generate_normal_samples(mean, std, num_samples):
+    """
+    Generates samples from a normal distribution.
 
+    Parameters:
+        mean (float): Mean of the distribution.
+        std (float): Standard deviation of the distribution.
+        num_samples (int): Number of samples to generate.
+
+    Returns:
+        list: A list of generated samples.
+    """ 
     return np.random.normal(mean, std, num_samples).tolist()
 
 
