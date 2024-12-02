@@ -23,7 +23,10 @@ def integrate_linear(m, b, a, c):
     result, _ = quad(linear_function, a, c)
     return result
 
-
+def solve_system_of_equations(coefficients, constants):
+    
+    solution = solve(coefficients, constants)
+    return {'X': solution[0], 'Y': solution[1]}
 
 
 
@@ -53,6 +56,6 @@ def test_solve_system_of_equations():
     coefficients = [[2, 1], [1, -1]]
     constants = [5, -1]
     result = solve_system_of_equations(coefficients, constants)
-    assert abs(result['X'] - 2) < 1e-6, f"Expected X=2 but got {result['X']}"
-    assert abs(result['Y'] - 1) < 1e-6, f"Expected Y=1 but got {result['Y']}"
+    assert abs(result['X'] - 4/3) < 1e-6, f"Expected X=4/3 but got {result['X']}"
+    assert abs(result['Y'] - 7/3) < 1e-6, f"Expected Y=7/3 but got {result['Y']}"
 
