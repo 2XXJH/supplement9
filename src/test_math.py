@@ -68,3 +68,11 @@ def test_solve_system_of_equations():
     assert abs(result['X'] - 4/3) < 1e-6, f"Expected X=4/3 but got {result['X']}"
     assert abs(result['Y'] - 7/3) < 1e-6, f"Expected Y=7/3 but got {result['Y']}"
 
+def test_generate_normal_samples():
+    mean, std, num_samples = 0, 1, 1000
+    samples = generate_normal_samples(mean, std, num_samples)
+    sample_mean = np.mean(samples)
+    sample_std = np.std(samples)
+
+    assert abs(sample_mean - mean) < 0.1, f"Expected mean ~0 but got {sample_mean}"
+    assert abs(sample_std - std) < 0.1, f"Expected std ~1 but got {sample_std}"
